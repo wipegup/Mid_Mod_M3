@@ -10,9 +10,11 @@ class SearchInfoFacade
 
   def nearest_stations
     # binding.pry
-    all_stations[:fuel_stations].take(15).map do |station_info|
+    nearest=all_stations[:fuel_stations].take(15).map do |station_info|
       Station.new(station_info)
     end
+
+    nearest.select{ |station| station.distance <5}
   end
 
   private
