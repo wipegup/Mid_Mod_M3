@@ -1,9 +1,19 @@
 class SearchInfoFacade
   def initialize(zip_code)
     @zip_code = zip_code
-    binding.pry
+    # binding.pry
   end
 
+  def total_stations
+    all_stations[:total_results]
+  end
+
+  def nearest_stations
+    # binding.pry
+    all_stations[:fuel_stations].take(15).map do |station_info|
+      Station.new(station_info)
+    end
+  end
 
   private
 

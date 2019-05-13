@@ -1,14 +1,16 @@
 <div id=total-stations>
-  <%= facade.total_stations %>
+  <%= facade.total_stations %> Stations
 </div>
 
 <div id=nearest-stations>
   <% facade.nearest_stations.each do |station| %>
-    Name: <%= station.name%>
-    Address: <%= station.address%>
-    Fuel Types: <%= station.fuel_types%>
-    Distance: <%= station.distance%>
-    Access Times: <%= station.access_times%>
+    <div class=station>
+      Name: <%= station.name%>
+      Address: <%= station.address%>
+      Fuel Types: <%= station.fuel_type%>
+      Distance: <%= station.distance%>
+      Access Times: <%= station.access_times%>
+    </div>
 
   <%end %>
 
