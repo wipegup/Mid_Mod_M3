@@ -22,7 +22,7 @@ feature "Search Info Facade" do
   end
 
   scenario "returns max of 15 stations" do
-    fuel_stations = [1]*20.map{|dist| {
+    fuel_stations = ([1]*20).map{|dist| {
                                         distance: dist.to_f+0.9,
                                         access_days_times: '24H',
                                         fuel_type: 'ELEC',
