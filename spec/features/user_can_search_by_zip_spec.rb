@@ -17,9 +17,9 @@ feature "User can visit root page" do
       stations.each do |station|
         expect(page).to have_css('.name')
         expect(page).to have_css('.address')
-        expect(page).to have_css('.fuel_type')
+        expect(page).to have_css('.fuel-type')
         expect(page).to have_css('.distance')
-        expect(page).to have_css('.access_times')
+        expect(page).to have_css('.access-times')
 
       end
     end
