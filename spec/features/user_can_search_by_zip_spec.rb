@@ -11,6 +11,8 @@ feature "User can visit root page" do
 
     expect(current_path).to eq(search_path)
     expect(page).to have_content("93 Stations")
-    expect(page).to have_css(".station", count: 15)
+    within('.nearest-stations') do
+      expect(page).to have_css(".station", count: 15)
+    end
   end
 end
