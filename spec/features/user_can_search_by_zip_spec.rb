@@ -13,6 +13,15 @@ feature "User can visit root page" do
     expect(page).to have_content("93 Stations")
     within('#nearest-stations') do
       expect(page).to have_css(".station", count: 15)
+      stations = all(".station")
+      stations.each do |station|
+        expect(page).to have_css('.name')
+        expect(page).to have_css('.address')
+        expect(page).to have_css('.fuel_type')
+        expect(page).to have_css('.distance')
+        expect(page).to have_css('.access_times')
+
+      end
     end
   end
 end
